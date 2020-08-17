@@ -18,7 +18,7 @@ fi
 
 ## normalize
 #cat ${dataFile} | sed 's/\t//g' | grep "^全家" | sed 's/^/店舖名稱：\ /'
-sed -e 's/\ \t//' -e 's/：/:/' -e 's/^\(全家.*$\)/店舖名稱:\1/' -e 's/^店舖號/店舖編號/' ${dataFile} > ${dataTempFile}
+sed -e 's/\ \t//' -e 's/：/:/' -e 's/^\(全家.*$\)/店舖名稱:\1/' -e 's/^店舖號/店舖編號/' -e 's/臺/台/g' ${dataFile} > ${dataTempFile}
 
 ## index
 index () {
